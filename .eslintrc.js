@@ -17,7 +17,7 @@ module.exports = {
     'plugin:flowtype/recommended',
     'prettier',
     'prettier/react',
-    "prettier/flowtype"
+    'prettier/flowtype'
 
   ],
   plugins: ['react', 'prettier', 'import', 'flowtype'],

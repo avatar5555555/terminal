@@ -1,4 +1,7 @@
 [ignore]
+.*/node_modules/@material-ui/*
+.*/node_modules/react-router/*
+.*/node_modules/react-router-dom/*
 
 [include]
 
@@ -7,5 +10,7 @@
 [lints]
 
 [options]
+module.system=haste
+module.name_mapper='^src\(.*\)$' -> '<PROJECT_ROOT>/src/\1'
 
 [strict]
