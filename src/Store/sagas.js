@@ -1,11 +1,11 @@
 import * as actions from './actions'
 
 import { call, fork, takeEvery, put } from 'redux-saga/effects'
-import api from 'src/Services/api'
+import api from 'src/services/api'
 
 const operatorsListRequest = function*() {
   try {
-    const data = call([api, api.getOperatorsList])
+    const data = yield call([api, api.getOperatorsList])
     yield put(actions.operatorsListReadSuccess(data))
   } catch (error) {
     yield put(actions.operatorsListReadFailure(error))
