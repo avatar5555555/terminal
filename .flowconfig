@@ -1,5 +1,8 @@
 [ignore]
 .*/node_modules/@material-ui/*
+.*/node_modules/@material-ui/icons/Menu/*
+.*/node_modules/@material-ui/icons/Send
+.*/node_modules/@material-ui/icons/ArrowBack
 .*/node_modules/react-router/*
 .*/node_modules/react-router-dom/*
 
