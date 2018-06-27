@@ -12,8 +12,8 @@ import registerServiceWorker from './registerServiceWorker'
 
 import messages from 'src/i18n'
 import config from 'src/config'
-import theme from 'src/Services/theme'
-import store from 'src/Store'
+import theme from 'src/services/theme'
+import store from 'src/store'
 
 const { locale } = config
 
