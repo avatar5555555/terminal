@@ -7,14 +7,16 @@ import IconButton from '@material-ui/core/IconButton'
 import ArrowBack from '@material-ui/icons/ArrowBack'
 import { withStyles } from '@material-ui/core/styles'
 import { FormattedMessage } from 'react-intl'
-import { withRouter, Link } from 'react-router-dom'
 import { compose } from 'redux'
+import { connect } from 'react-redux'
+import { push } from 'connected-react-router'
 
 import MenuButton from '../MenuButton'
 
 type Props = {
   classes: { root: string },
-  location: { pathname: string }
+  pathname: string,
+  back: Function
 }
 
 type State = {
@@ -36,8 +38,8 @@ class Bar extends Component<Props, State> {
   handleClose = () => this.setState({ anchorEl: null })
 
   render() {
-    const { classes, location } = this.props
-    const isRoot = location.pathname === '/'
+    const { classes, pathname, back } = this.props
+    const isRoot = pathname === '/'
     const { anchorEl } = this.state
 
     return (
@@ -52,12 +54,7 @@ class Bar extends Component<Props, State> {
               anchor={anchorEl}
             />
           ) : (
-            <IconButton
-              component={Link}
-              to="/"
-              color="inherit"
-              aria-label="Menu"
-            >
+            <IconButton color="inherit" aria-label="Menu" onClick={back}>
               <ArrowBack />
             </IconButton>
           )}
@@ -71,7 +68,18 @@ class Bar extends Component<Props, State> {
   }
 }
 
+const mapState = state => ({
+  pathname: state.router.location.pathname
+})
+
+const bindActions = dispatch => ({
+  back: () => dispatch(push('/'))
+})
+
 export default compose(
-  withRouter,
+  connect(
+    mapState,
+    bindActions
+  ),
   withStyles(styles)
 )(Bar)
