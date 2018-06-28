@@ -22,13 +22,14 @@ type Props = {
 type State = {
   anchorEl: HTMLElement | null
 }
-const styles = theme => ({
+
+export const styles = theme => ({
   root: {
     marginBottom: theme.spacing.unit
   }
 })
 
-class Bar extends Component<Props, State> {
+export class Bar extends Component<Props, State> {
   state = {
     anchorEl: null
   }
@@ -52,9 +53,15 @@ class Bar extends Component<Props, State> {
               handleOpen={this.handleOpen}
               handleClose={this.handleClose}
               anchor={anchorEl}
+              id="menu-button"
             />
           ) : (
-            <IconButton color="inherit" aria-label="Menu" onClick={back}>
+            <IconButton
+              id="back-button"
+              color="inherit"
+              aria-label="Menu"
+              onClick={back}
+            >
               <ArrowBack />
             </IconButton>
           )}
@@ -72,7 +79,7 @@ const mapState = state => ({
   pathname: state.router.location.pathname
 })
 
-const bindActions = dispatch => ({
+export const bindActions = dispatch => ({
   back: () => dispatch(push('/'))
 })
 

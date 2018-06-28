@@ -22,7 +22,9 @@ const MenuButton = ({ handleOpen, handleClose, anchor }: Props) => (
       open={Boolean(anchor)}
       onClose={handleClose}
     >
-      <MenuItem onClick={handleClose}>Logout</MenuItem>
+      <MenuItem id="menu-item" onClick={handleClose}>
+        Logout
+      </MenuItem>
     </Menu>
   </Fragment>
 )
