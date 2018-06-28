@@ -9,7 +9,9 @@ module.exports = {
     afterAll: true,
     beforeEach: true,
     afterEach: true,
-    Promise: true
+    Promise: true,
+    jest: true,
+    describe: true
   },
   extends: [
     'plugin:import/errors',
