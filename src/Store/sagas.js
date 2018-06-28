@@ -1,7 +1,10 @@
+import { push } from 'connected-react-router'
+
 import * as actions from './actions'
 
 import { call, fork, takeEvery, put } from 'redux-saga/effects'
 import api from 'src/services/api'
+import toast from 'src/services/toast'
 
 const operatorsListRequest = function*() {
   try {
@@ -15,8 +18,11 @@ const paymentRequest = function*({ payload }) {
   try {
     yield call([api, api.postPayment], payload)
     yield put(actions.paymentSuccess())
+    yield call([toast, toast.success], 'Successes.payment')
+    yield put(push('/'))
   } catch (error) {
     yield put(actions.paymentFailure(error))
+    yield call([toast, toast.error], 'Errors.serverError')
   }
 }
 

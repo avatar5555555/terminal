@@ -1,7 +1,9 @@
-import { addLocaleData } from 'react-intl'
+import { addLocaleData, IntlProvider } from 'react-intl'
 import ruLocaleData from 'react-intl/locale-data/ru'
 
 import ru from './ru'
+
+import config from 'src/config'
 
 addLocaleData([...ruLocaleData])
 
@@ -23,5 +25,16 @@ const flattenMessages = (nestedMessages, prefix = '') => {
 const messages = {
   ru: flattenMessages(ru)
 }
+
+const { locale } = config
+
+const intlProvider = new IntlProvider(
+  { locale, messages: messages[locale] },
+  {}
+)
+
+export const { intl } = intlProvider.getChildContext()
+
+export const t = (id, values = {}) => intl.formatMessage({ id }, values)
 
 export default messages
