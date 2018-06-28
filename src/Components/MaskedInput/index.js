@@ -19,7 +19,7 @@ type Props = {
   className: string
 }
 
-const MInput = props => (
+export const MInput = props => (
   <InputMask {...props} alwaysShowMask={false} maskChar="" />
 )
 

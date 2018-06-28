@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MInput renders 1`] = `
+<InputElement
+  alwaysShowMask={false}
+  maskChar=""
+/>
+`;
+
+exports[`MaskedInput renders 1`] = `
+<WithStyles(FormControl)
+  className="string"
+>
+  <WithStyles(InputLabel)
+    error={false}
+    htmlFor="string"
+  >
+    <FormattedMessage
+      id="Form.string"
+      values={Object {}}
+    />
+  </WithStyles(InputLabel)>
+  <WithStyles(Input)
+    error={false}
+    id="string"
+    inputComponent={[Function]}
+    inputProps={
+      Object {
+        "mask": "string",
+      }
+    }
+    onBlur={[Function]}
+    onChange={[Function]}
+    value=""
+  />
+</WithStyles(FormControl)>
+`;
+
+exports[`MaskedInput renders with valid === false 1`] = `
+<WithStyles(FormControl)
+  className="string"
+>
+  <WithStyles(InputLabel)
+    error={true}
+    htmlFor="string"
+  >
+    <FormattedMessage
+      id="Form.string"
+      values={Object {}}
+    />
+  </WithStyles(InputLabel)>
+  <WithStyles(Input)
+    error={true}
+    id="string"
+    inputComponent={[Function]}
+    inputProps={
+      Object {
+        "mask": "string",
+      }
+    }
+    onBlur={[Function]}
+    onChange={[Function]}
+    value=""
+  />
+  <WithStyles(FormHelperText)
+    error={true}
+    id="string-helper-text"
+  >
+    <FormattedMessage
+      id="Errors."
+      values={Object {}}
+    />
+  </WithStyles(FormHelperText)>
+</WithStyles(FormControl)>
+`;
