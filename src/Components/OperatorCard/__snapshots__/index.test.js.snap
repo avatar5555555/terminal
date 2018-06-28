@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OperatorCard renders 1`] = `
+<OperatorCard
+  classes={
+    Object {
+      "button": "OperatorCard-button-5 string",
+      "container": "OperatorCard-container-2 string",
+      "content": "OperatorCard-content-6 string",
+      "icon": "OperatorCard-icon-4 string",
+      "image": "OperatorCard-image-1 string",
+      "root": "OperatorCard-root-3 string",
+    }
+  }
+  name="string"
+  src="string"
+/>
+`;

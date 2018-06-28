@@ -25,7 +25,7 @@ type Props = {
   }
 }
 
-const styles = theme => ({
+export const styles = theme => ({
   image: {
     width: 100,
     height: 100,
