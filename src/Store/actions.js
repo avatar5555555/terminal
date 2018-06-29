@@ -13,7 +13,7 @@ export const operatorsListReadSuccess = data => ({
 })
 
 export const operatorsListReadFailure = error => ({
-  type: OPERATORS_LIST_READ_REQUEST,
+  type: OPERATORS_LIST_READ_FAILURE,
   payload: error
 })
 
