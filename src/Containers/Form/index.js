@@ -1,17 +1,21 @@
 // @flow
+
 import * as yup from 'yup'
 import { withFormik } from 'formik'
 import { compose } from 'redux'
 import { connect } from 'react-redux'
 import { injectIntl } from 'react-intl'
+import { withStyles } from '@material-ui/core/styles'
 
 import Form from './Form'
+import styles from './styles'
 
 import { isPhone } from 'src/services/validation'
 import { getOperatorsList, getIsLoading } from 'src/store/selectors'
 import { operatorsListReadRequest, paymentRequest } from 'src/store/actions'
+import type { State, FormikProps, FormikBag, FormValues } from 'src/types'
 
-const mapPropsToValues = ({ location }) => {
+export const mapPropsToValues = ({ location }: FormikProps) => {
   const { state } = location
   return {
     sum: '',
@@ -26,7 +30,7 @@ const validationSchema = yup.object().shape({
   phone: yup
     .string()
     .ensure()
-    .test('check if phone valid', 'invalidPhone', value => isPhone(value))
+    .test('check if phone valid', 'invalidPhone', isPhone)
     .required('required'),
   sum: yup
     .number()
@@ -38,18 +42,18 @@ const validationSchema = yup.object().shape({
     .required('required')
     .min(12, 'invalidCard'),
   cvv: yup
-    .number()
-    .required('required')
+    .string()
     .min(3, 'invalidCvv')
+    .required('required')
 })
 
-const handleSubmit = (values, formikBag) => {
+export const handleSubmit = (values: FormValues, formikBag: FormikBag) => {
   const { pay } = formikBag.props
 
   pay(values)
 }
 
-const mapState = state => {
+export const mapState = (state: State) => {
   const operators = getOperatorsList(state)
   const selectOptions = operators.map(item => ({
     label: item.name,
@@ -58,11 +62,11 @@ const mapState = state => {
 
   return {
     list: selectOptions,
-    getIsLoading
+    isLoading: getIsLoading(state)
   }
 }
 
-const bindActions = dispatch => ({
+export const bindActions = (dispatch: Function) => ({
   fetchList: () => dispatch(operatorsListReadRequest()),
   pay: () => dispatch(paymentRequest())
 })
@@ -78,5 +82,6 @@ export default compose(
     handleSubmit,
     validationSchema,
     validateOnBlur: false
-  })
+  }),
+  withStyles(styles)
 )(Form)
