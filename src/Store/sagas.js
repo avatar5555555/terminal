@@ -6,7 +6,7 @@ import { call, fork, takeEvery, put } from 'redux-saga/effects'
 import api from 'src/services/api'
 import toast from 'src/services/toast'
 
-const operatorsListRequest = function*() {
+export const operatorsListRequest = function*() {
   try {
     const data = yield call([api, api.getOperatorsList])
     yield put(actions.operatorsListReadSuccess(data))
@@ -14,7 +14,8 @@ const operatorsListRequest = function*() {
     yield put(actions.operatorsListReadFailure(error))
   }
 }
-const paymentRequest = function*({ payload }) {
+
+export const paymentRequest = function*({ payload }) {
   try {
     yield call([api, api.postPayment], payload)
     yield put(actions.paymentSuccess())
@@ -26,10 +27,11 @@ const paymentRequest = function*({ payload }) {
   }
 }
 
-const watchOperatorsListRequest = function*() {
+export const watchOperatorsListRequest = function*() {
   yield fork(operatorsListRequest)
 }
-const watchPaymentRequest = function*({ payload }) {
+
+export const watchPaymentRequest = function*({ payload }) {
   yield fork(paymentRequest, { payload })
 }
 

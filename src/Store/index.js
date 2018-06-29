@@ -8,19 +8,19 @@ import sagas from './sagas'
 
 import config from 'src/config'
 
+const { isDev, isBrowser } = config
+
 export const history = createBrowserHistory()
 
 const sagaMiddleware = createSagaMiddleware()
 
-let devTool
-if (config.isDev) {
-  devTool =
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-}
+// to test devtools
+export const getDevTools = (ext = window.devToolsExtension) =>
+  isDev && isBrowser && ext ? ext : () => fn => fn
 
 const store = createStore(
   connectRouter(history)(reducers),
-  devTool,
+  getDevTools()(),
   compose(applyMiddleware(routerMiddleware(history), sagaMiddleware))
 )
 
