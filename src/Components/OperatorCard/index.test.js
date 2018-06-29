@@ -1,8 +1,9 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import toJSON from 'enzyme-to-json'
 
-import OperatorCard, { styles } from '.'
+import styles from './styles'
+
+import OperatorCard from '.'
 
 const props = {
   src: 'string',
@@ -21,7 +22,7 @@ describe('OperatorCard', () => {
   const wrap = (props = {}) => shallow(<OperatorCard {...props} />)
 
   it('renders', () => {
-    expect(toJSON(wrap(props))).toMatchSnapshot()
+    expect(wrap(props)).toMatchSnapshot()
   })
 
   it('renders without crashing', () => {

@@ -1,6 +1,5 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import toJSON from 'enzyme-to-json'
 
 import MaskedInput, { MInput } from '.'
 
@@ -19,7 +18,7 @@ describe('MInput', () => {
   it('renders', () => {
     const wrapper = shallow(<MInput />)
 
-    expect(toJSON(wrapper)).toMatchSnapshot()
+    expect(wrapper).toMatchSnapshot()
   })
 })
 
@@ -27,10 +26,10 @@ describe('MaskedInput', () => {
   const wrap = (props = {}) => shallow(<MaskedInput {...props} />)
 
   it('renders', () => {
-    expect(toJSON(wrap(props))).toMatchSnapshot()
+    expect(wrap(props)).toMatchSnapshot()
   })
 
   it('renders with valid === false', () => {
-    expect(toJSON(wrap({ ...props, valid: false }))).toMatchSnapshot()
+    expect(wrap({ ...props, valid: false })).toMatchSnapshot()
   })
 })

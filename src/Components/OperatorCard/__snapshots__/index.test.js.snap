@@ -1,18 +1,78 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`OperatorCard renders 1`] = `
-<OperatorCard
-  classes={
-    Object {
-      "button": "OperatorCard-button-5 string",
-      "container": "OperatorCard-container-2 string",
-      "content": "OperatorCard-content-6 string",
-      "icon": "OperatorCard-icon-4 string",
-      "image": "OperatorCard-image-1 string",
-      "root": "OperatorCard-root-3 string",
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <WithStyles(OperatorCard)
+    classes={
+        Object {
+            "button": "string",
+            "container": "string",
+            "content": "string",
+            "icon": "string",
+            "image": "string",
+            "root": "string",
+          }
     }
-  }
-  name="string"
-  src="string"
-/>
+    name="string"
+    src="string"
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "function",
+    "props": Object {
+      "classes": Object {
+        "button": "OperatorCard-button-5 string",
+        "container": "OperatorCard-container-2 string",
+        "content": "OperatorCard-content-6 string",
+        "icon": "OperatorCard-icon-4 string",
+        "image": "OperatorCard-image-1 string",
+        "root": "OperatorCard-root-3 string",
+      },
+      "name": "string",
+      "src": "string",
+    },
+    "ref": null,
+    "rendered": null,
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "classes": Object {
+          "button": "OperatorCard-button-5 string",
+          "container": "OperatorCard-container-2 string",
+          "content": "OperatorCard-content-6 string",
+          "icon": "OperatorCard-icon-4 string",
+          "image": "OperatorCard-image-1 string",
+          "root": "OperatorCard-root-3 string",
+        },
+        "name": "string",
+        "src": "string",
+      },
+      "ref": null,
+      "rendered": null,
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
 `;

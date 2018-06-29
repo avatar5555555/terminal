@@ -1,14 +1,15 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import toJSON from 'enzyme-to-json'
 import configureStore from 'redux-mock-store'
 
-import ConnectedBar, { Bar, styles, bindActions } from '.'
+import Bar from './Bar'
+
+import ConnectedBar, { styles, bindActions } from '.'
 
 const props = {
   classes: { root: 'string' },
   pathname: '/',
-  back: jest.fn()
+  goBack: jest.fn()
 }
 const mockStore = configureStore()
 const initialState = {
@@ -28,18 +29,18 @@ describe('Bar', () => {
   })
 
   it('renders', () => {
-    expect(toJSON(wrapper)).toMatchSnapshot()
+    expect(wrapper).toMatchSnapshot()
   })
 })
 
 describe('DisconnectedBar', () => {
   const wrap = (props = {}) => shallow(<Bar {...props} />)
-  it('calls backFn on click', () => {
+  it('calls goBackFn on click', () => {
     const mockBackFn = jest.fn()
     const wrapper = wrap({
       ...props,
       pathname: '/notRoot',
-      back: mockBackFn
+      goBack: mockBackFn
     })
     wrapper.find('#back-button').simulate('click', { preventDefault() {} })
 
@@ -99,7 +100,7 @@ describe('functions', () => {
 
     const actions = bindActions(mockDispatch)
 
-    actions.back()
+    actions.goBack()
 
     expect(mockDispatch.mock.calls.length).toBe(1)
   })
