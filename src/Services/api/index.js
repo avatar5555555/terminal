@@ -1,9 +1,4 @@
-const fakeData = [
-  { name: 'mts', src: '/Images/mts.png' },
-  { name: 'beeline', src: '/Images/beeline.png' },
-  { name: 'megafon', src: '/Images/megafon.png' },
-  { name: 'other', src: '/Images/other.png' }
-]
+import fakeData from 'src/fakeData'
 
 const api = {}
 
@@ -18,7 +13,7 @@ api.postPayment = () =>
 
     if (randomNumber >= 3) return resolve()
 
-    reject()
+    reject('There is some troubles on server side')
   })
 
 export default api
