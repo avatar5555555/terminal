@@ -5,13 +5,9 @@ import MenuIcon from '@material-ui/icons/Menu'
 import MenuItem from '@material-ui/core/MenuItem'
 import IconButton from '@material-ui/core/IconButton'
 
-type Props = {
-  handleOpen: Function,
-  handleClose: Function,
-  anchor: HTMLElement | null
-}
+import type { MenuButtonProps } from 'src/types'
 
-const MenuButton = ({ handleOpen, handleClose, anchor }: Props) => (
+const MenuButton = ({ handleOpen, handleClose, anchor }: MenuButtonProps) => (
   <Fragment>
     <IconButton color="inherit" aria-label="Menu" onClick={handleOpen}>
       <MenuIcon />

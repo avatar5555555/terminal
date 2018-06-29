@@ -8,22 +8,13 @@ import FormControl from '@material-ui/core/FormControl'
 import InputMask from 'react-input-mask'
 import { FormattedMessage } from 'react-intl'
 
-type Props = {
-  mask: string,
-  id: string,
-  value: string | number,
-  onChange: Function,
-  onBlur: Function,
-  error: string,
-  valid: boolean,
-  className: string
-}
+import type { MaskedInputProps } from 'src/types'
 
-export const MInput = props => (
+export const MInput = (props: {}) => (
   <InputMask {...props} alwaysShowMask={false} maskChar="" />
 )
 
-const MaskedInput = (props: Props) => {
+const MaskedInput = (props: MaskedInputProps) => {
   const { mask, id, valid, error, className, ...rest } = props
   return (
     <FormControl className={className}>
