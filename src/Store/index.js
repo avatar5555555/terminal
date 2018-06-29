@@ -8,9 +8,9 @@ import sagas from './sagas'
 
 import config from 'src/config'
 
-const { isDev, isBrowser } = config
+const { isDev, isBrowser, basename } = config
 
-export const history = createBrowserHistory()
+export const history = createBrowserHistory({ basename })
 
 const sagaMiddleware = createSagaMiddleware()
 
