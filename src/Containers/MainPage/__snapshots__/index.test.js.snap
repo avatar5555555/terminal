@@ -1,0 +1,215 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MainPage renders 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <MainPage
+    classes={
+        Object {
+            "spinner": "string",
+          }
+    }
+    fetchList={[Function]}
+    isLoading={false}
+    list={
+        Array [
+            Object {
+              "name": "mts",
+              "src": "/Images/mts.png",
+            },
+            Object {
+              "name": "beeline",
+              "src": "/Images/beeline.png",
+            },
+            Object {
+              "name": "megafon",
+              "src": "/Images/megafon.png",
+            },
+            Object {
+              "name": "other",
+              "src": "/Images/other.png",
+            },
+          ]
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "alignItems": "center",
+      "children": Array [
+        <WithStyles(OperatorCard)
+          name="mts"
+          src="/Images/mts.png"
+/>,
+        <WithStyles(OperatorCard)
+          name="beeline"
+          src="/Images/beeline.png"
+/>,
+        <WithStyles(OperatorCard)
+          name="megafon"
+          src="/Images/megafon.png"
+/>,
+        <WithStyles(OperatorCard)
+          name="other"
+          src="/Images/other.png"
+/>,
+      ],
+      "container": true,
+      "direction": "column",
+      "spacing": 16,
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": "mts",
+        "nodeType": "class",
+        "props": Object {
+          "name": "mts",
+          "src": "/Images/mts.png",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": "beeline",
+        "nodeType": "class",
+        "props": Object {
+          "name": "beeline",
+          "src": "/Images/beeline.png",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": "megafon",
+        "nodeType": "class",
+        "props": Object {
+          "name": "megafon",
+          "src": "/Images/megafon.png",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": "other",
+        "nodeType": "class",
+        "props": Object {
+          "name": "other",
+          "src": "/Images/other.png",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "alignItems": "center",
+        "children": Array [
+          <WithStyles(OperatorCard)
+            name="mts"
+            src="/Images/mts.png"
+/>,
+          <WithStyles(OperatorCard)
+            name="beeline"
+            src="/Images/beeline.png"
+/>,
+          <WithStyles(OperatorCard)
+            name="megafon"
+            src="/Images/megafon.png"
+/>,
+          <WithStyles(OperatorCard)
+            name="other"
+            src="/Images/other.png"
+/>,
+        ],
+        "container": true,
+        "direction": "column",
+        "spacing": 16,
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": "mts",
+          "nodeType": "class",
+          "props": Object {
+            "name": "mts",
+            "src": "/Images/mts.png",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": "beeline",
+          "nodeType": "class",
+          "props": Object {
+            "name": "beeline",
+            "src": "/Images/beeline.png",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": "megafon",
+          "nodeType": "class",
+          "props": Object {
+            "name": "megafon",
+            "src": "/Images/megafon.png",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": "other",
+          "nodeType": "class",
+          "props": Object {
+            "name": "other",
+            "src": "/Images/other.png",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
