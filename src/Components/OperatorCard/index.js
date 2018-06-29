@@ -12,54 +12,11 @@ import Send from '@material-ui/icons/Send'
 import { FormattedMessage } from 'react-intl'
 import { Link } from 'react-router-dom'
 
-type Props = {
-  src: string,
-  name: string,
-  classes: {
-    image: string,
-    container: string,
-    root: string,
-    icon: string,
-    button: string,
-    content: string
-  }
-}
+import styles from './styles'
 
-export const styles = theme => ({
-  image: {
-    width: 100,
-    height: 100,
-    margin: theme.spacing.unit
-  },
-  container: {
-    display: 'flex',
-    flex: 1
-  },
-  root: {
-    width: '100%'
-  },
-  icon: {
-    marginLeft: theme.spacing.unit
-  },
-  button: {
-    alignSelf: 'center',
-    [theme.breakpoints.down('sm')]: {
-      alignSelf: 'flex-end'
-    }
-  },
-  content: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'flex-start',
-    flex: 1,
-    [theme.breakpoints.down('sm')]: {
-      flexDirection: 'column',
-      alignItems: 'flex-end'
-    }
-  }
-})
+import type { OperatorCardProps } from 'src/types'
 
-const OperatorCard = ({ src, name, classes }: Props) => (
+const OperatorCard = ({ src, name, classes }: OperatorCardProps) => (
   <Grid item xs={12} md={6} lg={4} className={classes.root}>
     <Card>
       <div className={classes.container}>
