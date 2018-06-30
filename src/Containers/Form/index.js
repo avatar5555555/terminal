@@ -38,9 +38,9 @@ const validationSchema = yup.object().shape({
     .max(1000, 'maxSum')
     .required('required'),
   card: yup
-    .number()
+    .string()
     .required('required')
-    .min(12, 'invalidCard'),
+    .min(19, 'invalidCard'), // 16 numbers plus 3 spaces between number's groups
   cvv: yup
     .string()
     .min(3, 'invalidCvv')
