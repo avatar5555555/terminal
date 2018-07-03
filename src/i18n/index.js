@@ -2,6 +2,7 @@ import { addLocaleData, IntlProvider } from 'react-intl'
 import ruLocaleData from 'react-intl/locale-data/ru'
 
 import ru from './ru'
+import en from './en'
 
 import config from 'src/config'
 
@@ -23,7 +24,8 @@ const flattenMessages = (nestedMessages, prefix = '') => {
 }
 
 const messages = {
-  ru: flattenMessages(ru)
+  ru: flattenMessages(ru),
+  en: flattenMessages(en)
 }
 
 const { locale } = config
