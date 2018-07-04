@@ -27,7 +27,14 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "coverage": "react-scripts test --env=jsdom --coverage",
-    "now-start": "serve --single ./build"
+    "now-start": "serve --single ./build",
+    "precommit": "flow check && lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "eslint --fix",
+      "git add"
+    ]
   },
   "devDependencies": {
     "enzyme": "^3.3.0",
@@ -39,6 +46,7 @@
     "eslint-plugin-prettier": "^2.6.1",
     "eslint-plugin-react": "^7.10.0",
     "flow-bin": "^0.75.0",
+    "lint-staged": "^7.2.0",
     "prettier": "^1.13.6",
     "redux-mock-store": "^1.5.3"
   },
