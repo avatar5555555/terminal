@@ -1,4 +1,8 @@
-export const getLocale = (nav = window.navigator) =>
+// @flow
+
+import type { Navigator } from 'src/types'
+
+export const getLocale = (nav: Navigator = window.navigator) =>
   nav.language === 'ru' ? 'ru' : 'en'
 
 const config = {

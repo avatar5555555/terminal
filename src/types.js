@@ -6,6 +6,10 @@ export type BarProps = {
   goBack: Function
 }
 
+export type Navigator = {
+  language: string
+}
+
 export type FormikBag = { props: { pay: Function } }
 
 export type FormikProps = {
